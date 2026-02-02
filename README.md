@@ -33,4 +33,21 @@ This project demonstrates:
 
 ## ▶️ How to Run Locally
 
-1. Clone the repository  
+1. Clone the repository
+git clone https://github.com/your-username/todo-app.git
+
+2. Open `index.html` in your browser
+
+## 🌍 Live Demo
+
+(Enable GitHub Pages and put your link here)
+
+## 📈 Future Improvements
+
+- Task deadlines  
+- Priority levels  
+- Dark mode  
+- Drag & drop sorting  
+
+---
+
