@@ -1,3 +1,4 @@
+/* Base layout */
 body {
     font-family: Arial, sans-serif;
     background: #f4f4f4;
@@ -16,54 +17,101 @@ body {
 
 h1 {
     text-align: center;
+    margin: 0 0 12px 0;
 }
 
+/* Input area */
 .input-section {
     display: flex;
     gap: 10px;
+    margin-bottom: 10px;
 }
-
-input {
+.input-section input {
     flex: 1;
     padding: 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
 }
-
-button {
-    padding: 10px;
+.input-section button {
+    padding: 10px 12px;
     cursor: pointer;
     border: none;
     background: #4CAF50;
     color: white;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+.input-section button:active { transform: translateY(1px); }
+
+/* Task count */
+#taskCount {
+    margin: 8px 0 12px 0;
+    font-size: 13px;
+    color: #555;
 }
 
-button:hover {
-    opacity: 0.9;
-}
-
+/* Task list */
 ul {
     list-style: none;
     padding: 0;
-    margin-top: 20px;
+    margin-top: 0;
 }
-
 li {
-    background: #eee;
+    background: #fafafa;
     padding: 10px;
     margin-bottom: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 6px;
+    border: 1px solid #eef2f7;
+    transition: transform 120ms ease, box-shadow 120ms ease;
 }
+li:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
 
 li.completed {
     text-decoration: line-through;
     opacity: 0.6;
 }
 
+/* Task text and actions */
+.task-text {
+    flex: 1;
+    margin-right: 12px;
+    word-break: break-word;
+    font-size: 14px;
+}
 .delete-btn {
-    background: red;
-    padding: 5px 8px;
-    border-radius: 4px;
+    background: #ef4444;
+    color: white;
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+.delete-btn:active { transform: translateY(1px); }
+
+/* Clear completed button */
+#clearCompleted {
+    margin-top: 10px;
+    width: 100%;
+    background: #ef4444;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+#clearCompleted:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+/* Small responsive tweak */
+@media (max-width: 420px) {
+    .container { width: 92%; padding: 16px; }
+    .input-section button, #clearCompleted { padding: 9px; }
 }
